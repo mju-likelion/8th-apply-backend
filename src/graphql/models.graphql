@@ -5,7 +5,7 @@ type User {
   name: String!
   username: String!
   password: String!
-  createAt: DateTime!
+  createdAt: DateTime!
   updatedAt: DateTime!
 }
 
@@ -19,8 +19,8 @@ type Volunteer {
   grade: String!
   college: String!
   major: String!
-  application: Application!
-  createAt: DateTime!
+  application: Application
+  createdAt: DateTime!
   updatedAt: DateTime!
 }
 
@@ -32,7 +32,7 @@ type Application {
   experience: String
   wannaMakeDesc: String
   wannaMakeImage: [File!]!
-  createAt: DateTime!
+  createdAt: DateTime!
   updatedAt: DateTime!
 }
 
@@ -40,6 +40,6 @@ type File {
   id: ID!
   url: String!
   application: Application!
-  createAt: DateTime!
+  createdAt: DateTime!
   updatedAt: DateTime!
 }

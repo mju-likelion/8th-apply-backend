@@ -3,7 +3,7 @@ type User {
   name: String!
   username: String!
   password: String!
-  createAt: DateTime! @createAt
+  createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
 
@@ -17,8 +17,8 @@ type Volunteer {
   grade: String!
   college: String!
   major: String!
-  application: Application! @relation(link: TABLE)
-  createAt: DateTime! @createAt
+  application: Application @relation(link: TABLE)
+  createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
 
@@ -30,7 +30,7 @@ type Application {
   experience: String
   wannaMakeDesc: String
   wannaMakeImage: [File!]!
-  createAt: DateTime! @createAt
+  createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
 
@@ -38,6 +38,6 @@ type File {
   id: ID! @id
   url: String!
   application: Application! @relation(link: INLINE)
-  createAt: DateTime! @createAt
+  createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

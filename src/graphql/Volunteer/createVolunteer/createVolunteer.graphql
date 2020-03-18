@@ -1,0 +1,12 @@
+type Mutation {
+  createVolunteer(
+    name: String!
+    email: String!
+    password: String!
+    phone: String!
+    sid: String!
+    grade: String!
+    college: String!
+    major: String!
+  ): Volunteer!
+}
