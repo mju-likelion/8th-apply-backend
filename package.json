@@ -1,8 +1,8 @@
 {
-  "name": "mju-likelion-8th-apply-backend",
+  "name": "mju-likelion-official-server",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/mju-likelion/8th-apply-backend.git",
+  "repository": "https://github.com/mju-likelion/official-server.git",
   "author": "yuyaebean <yuyaebean@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -19,6 +19,7 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "dev": "nodemon --exec ts-node src/app.ts"
+    "dev": "nodemon --exec ts-node src/app.ts",
+    "deploy": "prisma deploy"
   }
 }
