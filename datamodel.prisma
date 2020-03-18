@@ -3,18 +3,23 @@ type User {
   name: String!
   username: String!
   password: String!
+  createAt: DateTime! @createAt
+  updatedAt: DateTime! @updatedAt
 }
 
 type Volunteer {
   id: ID! @id
   name: String!
   email: String! @unique
+  password: String!
   phone: String! @unique
   sid: String! @unique
   grade: String!
   college: String!
   major: String!
   application: Application! @relation(link: TABLE)
+  createAt: DateTime! @createAt
+  updatedAt: DateTime! @updatedAt
 }
 
 type Application {
@@ -25,10 +30,14 @@ type Application {
   experience: String
   wannaMakeDesc: String
   wannaMakeImage: [File!]!
+  createAt: DateTime! @createAt
+  updatedAt: DateTime! @updatedAt
 }
 
 type File {
   id: ID! @id
   url: String!
   application: Application! @relation(link: INLINE)
+  createAt: DateTime! @createAt
+  updatedAt: DateTime! @updatedAt
 }

@@ -1,0 +1,45 @@
+scalar DateTime
+
+type User {
+  id: ID!
+  name: String!
+  username: String!
+  password: String!
+  createAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Volunteer {
+  id: ID!
+  name: String!
+  email: String!
+  password: String!
+  phone: String!
+  sid: String!
+  grade: String!
+  college: String!
+  major: String!
+  application: Application!
+  createAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Application {
+  id: ID!
+  motive: String
+  spec: String
+  activity: String
+  experience: String
+  wannaMakeDesc: String
+  wannaMakeImage: [File!]!
+  createAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type File {
+  id: ID!
+  url: String!
+  application: Application!
+  createAt: DateTime!
+  updatedAt: DateTime!
+}
