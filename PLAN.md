@@ -4,11 +4,9 @@
 
 - [x] Create Volunteer
 - [ ] Edit Volunteer
-- [x] View Volunteer
+- [x] View Volunteer + Application
 
-- [ ] Create Application
-- [ ] Edit Application
-- [ ] View Application (just me)
+- [x] Create/Edit Application
 
 ## Admin User
 

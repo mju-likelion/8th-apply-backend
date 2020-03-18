@@ -31,15 +31,8 @@ type Application {
   activity: String
   experience: String
   wannaMakeDesc: String
-  wannaMakeImage: [File!]!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-}
-
-type File {
-  id: ID!
-  url: String!
-  application: Application!
+  wannaMakeImage: String
+  volunteer: Volunteer!
   createdAt: DateTime!
   updatedAt: DateTime!
 }

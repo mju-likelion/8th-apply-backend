@@ -1,0 +1,12 @@
+type Mutation {
+  createApplication(
+    motive: String
+    spec: String
+    activity: String
+    experience: String
+    wannaMakeDesc: String
+    wannaMakeImageUrl: String
+    volunteerEmail: String!
+    volunteerPassword: String!
+  ): Application!
+}

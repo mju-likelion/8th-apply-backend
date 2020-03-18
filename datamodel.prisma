@@ -29,15 +29,8 @@ type Application {
   activity: String
   experience: String
   wannaMakeDesc: String
-  wannaMakeImage: [File!]!
-  createdAt: DateTime! @createdAt
-  updatedAt: DateTime! @updatedAt
-}
-
-type File {
-  id: ID! @id
-  url: String!
-  application: Application! @relation(link: INLINE)
+  wannaMakeImageUrl: String
+  volunteer: Volunteer!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
