@@ -1,0 +1,34 @@
+type User {
+  id: ID! @id
+  name: String!
+  username: String!
+  password: String!
+}
+
+type Volunteer {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  phone: String! @unique
+  sid: String! @unique
+  grade: String!
+  college: String!
+  major: String!
+  application: Application! @relation(link: TABLE)
+}
+
+type Application {
+  id: ID! @id
+  motive: String
+  spec: String
+  activity: String
+  experience: String
+  wannaMakeDesc: String
+  wannaMakeImage: [File!]!
+}
+
+type File {
+  id: ID! @id
+  url: String!
+  application: Application! @relation(link: INLINE)
+}

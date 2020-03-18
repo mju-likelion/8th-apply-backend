@@ -20,6 +20,8 @@
   },
   "scripts": {
     "dev": "nodemon --exec ts-node src/app.ts",
-    "deploy": "prisma deploy"
+    "deploy": "prisma deploy",
+    "generate": "prisma generate",
+    "prisma": "yarn deploy && yarn generate"
   }
 }
