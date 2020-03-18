@@ -27,6 +27,7 @@
     "deploy": "prisma deploy",
     "generate": "prisma generate",
     "prisma": "yarn deploy && yarn generate",
+    "prebuild": "yarn generate",
     "build": "tsc",
     "postbuild": "cd src && copy ./graphql/**/*.graphql ../dist/src/graphql",
     "start": "node dist/src/app.js"

@@ -1,0 +1,3 @@
+type Query {
+  volunteer(email: String!, password: String!): Volunteer!
+}
