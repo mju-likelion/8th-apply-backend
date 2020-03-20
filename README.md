@@ -21,11 +21,15 @@ git clone https://github.com/mju-likelion/official-server.git
 #### .env
 
 - PRISMA_ENDPOINT (required): Prisma endpoint url
+- AWS_ACCESS_KEY_ID (required): AWS access key
+- AWS_SECRET_ACCESS_KEY (required): AWS secret key
 
 ##### Example .env file
 
 ```text
 PRISMA_ENDPOINT="{ YOUR_PRISMA_ENDPOINT_URL }"
+AWS_ACCESS_KEY_ID="{ YOUR_AWS_ACCESS_KEY_ID }"
+AWS_SECRET_ACCESS_KEY="{ YOUR_AWS_SECRET_ACCESS_KEY }"
 ```
 
 ### 3. Start server
