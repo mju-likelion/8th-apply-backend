@@ -31,7 +31,7 @@ type Application {
   activity: String
   experience: String
   wannaMakeDesc: String
-  wannaMakeImage: String
+  wannaMakeImageUrl: String
   volunteer: Volunteer!
   createdAt: DateTime!
   updatedAt: DateTime!
