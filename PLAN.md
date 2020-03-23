@@ -3,7 +3,7 @@
 ## Normal User
 
 - [x] Create Volunteer
-- [ ] Edit Volunteer
+- [x] Edit Volunteer
 - [x] View Volunteer + Application
 
 - [x] Create/Edit Application
