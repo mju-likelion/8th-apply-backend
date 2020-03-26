@@ -1,0 +1,13 @@
+type Mutation {
+  createUser(
+    name: String!
+    email: String!
+    gender: Gender!
+    phone: String!
+    sid: String!
+    major: String!
+    github: String
+    username: String!
+    password: String!
+  ): User!
+}
