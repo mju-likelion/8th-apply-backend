@@ -1,8 +1,21 @@
+enum Gender {
+  MALE
+  FEMALE
+}
+
 type User {
   id: ID! @id
   name: String!
+  email: String! @unique
+  gender: Gender!
+  phone: String! @unique
+  sid: String! @unique
+  major: String!
+  github: String @unique
   username: String!
   password: String!
+  isConfirmed: Boolean!
+  isStaff: Boolean!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

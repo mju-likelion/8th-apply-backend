@@ -1,15 +1,19 @@
 # Plan API
 
-## Normal User
+## Applicant User
 
 - [x] Create Volunteer
 - [x] Edit Volunteer
 - [x] View Volunteer + Application
-
 - [x] Create/Edit Application
 
-## Admin User
+## Normal User
 
+- [ ] Sign up
+- [ ] Sign in
+
+## Staff User
+
+- _All feature of Normal User_
 - [ ] See all applications
 - [ ] See specific application
-- [ ] Like application (option)

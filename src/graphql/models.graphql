@@ -1,10 +1,23 @@
 scalar DateTime
 
+enum Gender {
+  MALE
+  FEMALE
+}
+
 type User {
   id: ID!
   name: String!
+  email: String!
+  gender: Gender!
+  phone: String!
+  sid: String!
+  major: String!
+  github: String
   username: String!
   password: String!
+  isConfirmed: Boolean!
+  isStaff: Boolean!
   createdAt: DateTime!
   updatedAt: DateTime!
 }
