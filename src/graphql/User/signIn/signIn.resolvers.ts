@@ -12,6 +12,7 @@ export default {
     signIn: async function(_: any, { email, password }: Args) {
       const user = await prisma.user({ email });
       if (!user) throw Error('There is no such user.');
+      if (!user.isConfirmed) throw Error('Not confirmed yet.');
 
       const match = await bcrypt.compare(password, user.password);
       if (match) {
