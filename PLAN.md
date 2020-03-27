@@ -10,7 +10,7 @@
 ## Normal User
 
 - [x] Sign up
-- [ ] Sign in
+- [x] Sign in
 
 ## Staff User
 

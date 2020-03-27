@@ -4,6 +4,8 @@ import cors from 'cors';
 
 import schema from './schema';
 import uploadMiddleware from './upload';
+import './passport';
+import { authenticateJwt } from './passport';
 
 const whitelist = [
   'https://develop.mju-likelion.com',
@@ -20,8 +22,12 @@ const corsOptions: cors.CorsOptions = {
   }
 };
 
-const server = new GraphQLServer({ schema } as any);
+const server = new GraphQLServer({
+  schema,
+  context: ({ request }) => ({ request })
+});
 server.express.use(logger('dev'));
+server.express.use(authenticateJwt);
 server.express.post(
   '/api/upload',
   cors(corsOptions),
