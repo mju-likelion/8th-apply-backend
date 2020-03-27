@@ -1,7 +1,10 @@
 import dotenv from 'dotenv';
 import passport from 'passport';
-import { Strategy as JwtStrategy, VerifiedCallback } from 'passport-jwt';
-import { ExtractJwt } from 'passport-jwt';
+import {
+  Strategy as JwtStrategy,
+  ExtractJwt,
+  VerifiedCallback
+} from 'passport-jwt';
 import { prisma } from '../generated/prisma-client';
 
 dotenv.config();
@@ -9,8 +12,6 @@ dotenv.config();
 const opts = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.JWT_SECRET,
-  issuer: 'develop.mju-likelion.com',
-  audience: 'mju-likelion.com',
   exp: Date.now() + 86400000
 };
 
@@ -28,9 +29,9 @@ passport.use(new JwtStrategy(opts, verifyUser));
 passport.initialize();
 
 export function authenticateJwt(req: any, res: any, next: any) {
-  return passport.authenticate('jwt', { session: false }, (error, admin) => {
-    if (admin) {
-      req.admin = admin;
+  return passport.authenticate('jwt', { session: false }, (error, user) => {
+    if (user) {
+      req.user = user;
     }
     next();
   })(req, res, next);

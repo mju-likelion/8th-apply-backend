@@ -15,5 +15,5 @@
 ## Staff User
 
 - _All feature of Normal User_
-- [ ] See all applications
+- [x] See all applications
 - [ ] See specific application

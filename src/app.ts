@@ -3,9 +3,10 @@ import logger from 'morgan';
 import cors from 'cors';
 
 import schema from './schema';
-import uploadMiddleware from './upload';
 import './passport';
 import { authenticateJwt } from './passport';
+import { isUser, isStaff } from './middlewares';
+import uploadMiddleware from './upload';
 
 const whitelist = [
   'https://develop.mju-likelion.com',
@@ -24,7 +25,7 @@ const corsOptions: cors.CorsOptions = {
 
 const server = new GraphQLServer({
   schema,
-  context: ({ request }) => ({ request })
+  context: ({ request }) => ({ request, isUser, isStaff })
 });
 server.express.use(logger('dev'));
 server.express.use(authenticateJwt);
