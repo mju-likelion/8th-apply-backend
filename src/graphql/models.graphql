@@ -9,13 +9,12 @@ type User {
   id: ID!
   name: String!
   email: String!
+  password: String!
   gender: Gender!
   phone: String!
   sid: String!
   major: String!
   github: String
-  username: String!
-  password: String!
   isConfirmed: Boolean!
   isStaff: Boolean!
   createdAt: DateTime!

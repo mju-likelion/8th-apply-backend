@@ -16,30 +16,19 @@ interface Args {
 export default {
   Mutation: {
     createUser: async function(_: any, args: Args) {
-      const {
-        name,
-        email,
-        gender,
-        phone,
-        sid,
-        major,
-        github,
-        username,
-        password
-      } = args;
+      const { name, email, password, gender, phone, sid, major, github } = args;
 
       const passwordHash = await bcrypt.hash(password, 10);
 
       return await prisma.createUser({
         name,
         email,
+        password: passwordHash,
         gender,
         phone,
         sid,
         major,
         github,
-        username,
-        password: passwordHash,
         isConfirmed: false,
         isStaff: false
       });
