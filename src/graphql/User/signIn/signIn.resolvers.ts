@@ -8,7 +8,7 @@ interface Args {
 }
 
 export default {
-  Query: {
+  Mutation: {
     signIn: async function(_: any, { email, password }: Args) {
       const user = await prisma.user({ email });
       if (!user) throw Error('There is no such user.');
@@ -16,6 +16,10 @@ export default {
 
       const match = await bcrypt.compare(password, user.password);
       if (match) {
+        await prisma.updateUser({
+          where: { email },
+          data: { lastSignedIn: new Date().toISOString() }
+        });
         return generateToken(user.id);
       } else {
         throw Error('Wrong password.');

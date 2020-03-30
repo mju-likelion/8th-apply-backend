@@ -17,6 +17,7 @@ type User {
   github: String
   isConfirmed: Boolean!
   isStaff: Boolean!
+  lastSignedIn: DateTime
   createdAt: DateTime!
   updatedAt: DateTime!
 }
