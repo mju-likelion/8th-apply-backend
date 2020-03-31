@@ -5,6 +5,6 @@ export function isUser(request: any) {
 
 export function isStaff(request: any) {
   isUser(request);
-  if (request.user.isStaff) throw Error('You are not staff!');
+  if (!request.user.isStaff) throw Error('You are not staff!');
   return;
 }
