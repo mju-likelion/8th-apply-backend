@@ -1,5 +1,9 @@
 import { prisma } from '../../../../generated/prisma-client';
 
+interface Args {
+  id?: string;
+}
+
 interface Context {
   request: any;
   isUser: (request: any) => void;
@@ -8,10 +12,15 @@ interface Context {
 
 export default {
   Query: {
-    volunteers: async function(_: any, __: any, { request, isStaff }: Context) {
+    volunteers: async function(
+      _: any,
+      { id }: Args,
+      { request, isStaff }: Context
+    ) {
       isStaff(request);
 
-      return await prisma.volunteers({ orderBy: 'createdAt_ASC' });
+      if (id) return await prisma.volunteers({ where: { id } });
+      else return await prisma.volunteers({ orderBy: 'createdAt_ASC' });
     }
   }
 };
