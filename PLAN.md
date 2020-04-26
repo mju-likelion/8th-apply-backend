@@ -10,11 +10,13 @@
 ## Normal User
 
 - [x] Sign up
-- [x] See my info
+- [ ] See my info
 - [x] Sign in
+- [x] Submit homework
 
 ## Staff User
 
 - _All feature of Normal User_
 - [x] See all applications
-- [ ] See specific application
+- [x] See specific application
+- [ ] See homeworks

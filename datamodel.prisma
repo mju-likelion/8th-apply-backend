@@ -16,6 +16,26 @@ type User {
   isConfirmed: Boolean!
   isStaff: Boolean!
   lastSignedIn: DateTime
+  homeworks: [Homework!]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Homework {
+  id: ID! @id
+  github: String!
+  owner: User!
+  week: HomeworkWeek!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type HomeworkWeek {
+  id: ID! @id
+  week: Int! @unique
+  startDate: DateTime!
+  endDate: DateTime!
+  homeworks: [Homework!]!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
